@@ -1,4 +1,5 @@
 import * as express from "express";
+import * as api from "./../scripts/dataGrab"
 
 export const register = ( app: express.Application ) => {
 
@@ -17,4 +18,8 @@ export const register = ( app: express.Application ) => {
     app.get("/posts", (req: any, res) => {
        res.send("this is the posts endpoint")
     });
+
+    app.get("/account", (req: any, res) => {
+        res.send(api.dataManipulation())
+    })
 };
